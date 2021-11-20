@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const cookieParser = require('cookie-parser')
+const cookieParser = require("cookie-parser");
 const app = express();
 require("dotenv").config();
 app.use(express.json());
@@ -23,11 +23,16 @@ mongoose
   .then(() => console.log("connection successful"))
   .catch((err) => console.log(err));
 
-  // Routes
+// Routes
 app.use("/user", userHandler);
 
 // Routes
 app.use("/task", taskHandler);
+
+// Test
+app.get("/", (req, res) => {
+  res.send("Api is worikng");
+});
 
 // Error handling
 app.use((err, req, res, next) => {
