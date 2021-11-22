@@ -5,8 +5,10 @@ const jwt = require("jsonwebtoken");
 
 const LoginGuard = async (req, res, next) => {
   try {
+    const {authorization} = req.headers;
+    const token = authorization.split(' ')[1]
     // JWT Token Verify
-    const tokenVerify = jwt.verify(req.cookies?.jwt, process.env.JWT_SECRET);
+    const tokenVerify = jwt.verify(token, process.env.JWT_SECRET);
     // Find The user and get only email
     const findUser = await Users.findOne(
       { email: tokenVerify?.email },
