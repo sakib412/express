@@ -23,7 +23,7 @@ const Login = async (req, res) => {
           // res.cookie('jwt',token,{httpOnly: true});
           res
             .status(200)
-            .send(SendResponse(true, "Login Successful",token));
+            .send(SendResponse(true, "Login Successful",{token}));
         } else {
           res.status(401).send(SendResponse(false, "Authentication failed"));
         }
