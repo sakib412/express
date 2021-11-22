@@ -12,9 +12,8 @@ router.post("/login", Login);
 // User Data Update
 router.post("/update", LoginGuard, Update);
 
-router.get('/test',(req,res)=>{
-    console.log(req.cookies.jwt);
-    res.send('true');
-})
+router.get("/test", (req, res) => {
+  res.send(`Token:${req?.cookies?.jwt}`);
+});
 
 module.exports = router;
