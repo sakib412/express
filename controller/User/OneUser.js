@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 
 const OneUser = async (req, res) => {
   try {
+      console.log(req.cookies.jwt);
     const tokenVerify = jwt.verify(req.cookies?.jwt, process.env.JWT_SECRET);
     // Find The user and get only email
     const findUser = await Users.findOne(

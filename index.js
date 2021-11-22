@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const app = express();
+app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
@@ -17,8 +18,6 @@ app.use(
     sameSite: "None",
   })
 );
-
-app.use(cookieParser());
 
 const userHandler = require("./routeHandler/userHandler");
 const taskHandler = require("./routeHandler/taskHandler");
