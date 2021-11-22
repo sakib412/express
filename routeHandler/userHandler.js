@@ -12,9 +12,9 @@ router.post("/login", Login);
 // User Data Update
 router.post("/update", LoginGuard, Update);
 
-// router.get('/test',(req,res)=>{
-//     console.log(req.cookies.jwt);
-//     res.send('true');
-// })
+router.get('/test',(req,res)=>{
+    console.log(req.cookies.jwt);
+    res.send('true');
+})
 
 module.exports = router;

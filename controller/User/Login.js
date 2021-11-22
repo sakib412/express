@@ -9,7 +9,7 @@ const Login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    //   Check user is available or not
+    // Check user is available or not
     const userData = await Users.findOne({ email }, { email: 1, password: 1 });
 
     if (userData) {
@@ -20,7 +20,7 @@ const Login = async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: "7 days" }
           );
-          // res.cookie('jwt',token,{httpOnly: true});
+          res.cookie('jwt',token,{httpOnly: true});
           res
             .status(200)
             .send(SendResponse(true, "Login Successful",{token}));
