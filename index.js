@@ -12,7 +12,6 @@ app.use(
       "https://next-app-sandy-beta.vercel.app",
       "https://next-jst-est-pied.vercel.app",
     ],
-    credentials: true,
     secure: true,
     sameSite: "None",
   })
