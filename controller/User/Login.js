@@ -20,7 +20,11 @@ const Login = async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: "7 days" }
           );
-          res.cookie("jwt", token, { httpOnly: true });
+          res.cookie("jwt", token, {
+            httpOnly: true,
+            sameSite: "none",
+            secure: true,
+          });
           res
             .status(200)
             .send(SendResponse(true, "Login Successful", { token }));

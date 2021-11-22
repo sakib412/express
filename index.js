@@ -15,7 +15,7 @@ app.use(
     ],
     credentials: true,
     secure: true,
-    sameSite: "None",
+    sameSite: "none",
   })
 );
 
