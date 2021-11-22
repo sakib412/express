@@ -11,7 +11,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://next-app-sandy-beta.vercel.app",
-      "https://next-jst-est-pied.vercel.app",
+      "https://next-jst-est-ecuplqqy3-firasel.vercel.app",
     ],
     credentials: true,
     secure: true,
