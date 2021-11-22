@@ -7,11 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://next-app-sandy-beta.vercel.app",
-      "https://next-jst-est-pied.vercel.app",
-    ],
+    origin: '*',
     credentials: true,
     secure: true,
     sameSite: "None",
