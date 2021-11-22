@@ -5,7 +5,7 @@ require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: ["http://localhost:3000","https://next-app-sandy-beta.vercel.app/"], credentials: true }));
 app.use(cookieParser());
 
 const userHandler = require("./routeHandler/userHandler");
