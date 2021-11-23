@@ -43,6 +43,12 @@ You need to login before get user data
 Return all data of loggedIn user
 ```
 
+User Data get (url/user/logout) [Method: GET]
+
+```
+Clear all cookies in your browser
+```
+
 ## Task
 
 Add (url/task/add) [Method: POST]
