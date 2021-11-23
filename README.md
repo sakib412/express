@@ -35,6 +35,14 @@ You need to login before updating
 }
 ```
 
+User Data get (url/user/check) [Method: GET]
+
+```
+You need to login before get user data
+
+Return all data of loggedIn user
+```
+
 ## Task
 
 Add (url/task/add) [Method: POST]
@@ -43,7 +51,7 @@ Add (url/task/add) [Method: POST]
 You need to login before adding
 {
   title:string(required)
-  status:string(default=todo)
+  status:string(default=todo)[Accept only this string = todo/inprogress/done]
 }
 ```
 
@@ -53,7 +61,7 @@ Update (url/task/update) [Method: POST]
 You need to login before updating
 {
   taskId:string(required)
-  status:string(required)
+  status:string(required)[todo/inprogress/done]
 }
 ```
 
@@ -80,5 +88,19 @@ Optional = (url/user/get?status=true) (Return All Task Data)
 Api Link:
 
 ```sh
-http://localhost:3000/
+https://user-taskapi.herokuapp.com/
+```
+
+Api Calling Example:
+
+```sh
+fetch("https://user-taskapi.herokuapp.com/task/get?status=true", {
+  method: "GET",
+  credentials: "include",
+  withCredentials: true,
+})
+.then((res) => res.json())
+.then((data) => {
+  console.log(data);
+});
 ```
