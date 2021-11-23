@@ -7,7 +7,12 @@ const Logout = async (req, res) => {
       if (!cookie.hasOwnProperty(prop)) {
         continue;
       }
-      res.cookie(prop, "", { expires: new Date(0) });
+      res.cookie(prop, "", {
+          httpOnly: true,
+          sameSite: "none",
+          secure: true,
+          expires: new Date(0),
+      });
     }
     res.status(200).send(SendResponse(true, "Cookie clear success"));
   } catch (err) {
