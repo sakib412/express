@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 const userSchema = require("../../schemas/userSchema");
 const Users = new mongoose.model("users", userSchema);
-const bcrypt = require("bcrypt");
 const SendResponse = require("../../helper/SendResponse/SendResponse");
 const jwt = require("jsonwebtoken");
 
