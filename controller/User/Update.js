@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const userSchema = require("../../schemas/userSchema");
-const SendResponse = require("../SendResponse/SendResponse");
+const SendResponse = require("../../helper/SendResponse/SendResponse");
 const Users = new mongoose.model("users", userSchema);
 
 const Update = async (req, res) => {

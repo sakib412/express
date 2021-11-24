@@ -1,4 +1,4 @@
-const SendResponse = require("../SendResponse/SendResponse");
+const SendResponse = require("../../helper/SendResponse/SendResponse");
 
 const Logout = async (req, res) => {
   try {
