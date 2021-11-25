@@ -21,7 +21,7 @@ const Login = async (req, res) => {
             { expiresIn: "7 days" }
           );
           res.cookie("jwt", token, {
-            domain: process.env.NODE_ENV === 'development' ? 'localhost' : 'next-app-sandy-beta.vercel.app',
+            domain: "localhost",
             httpOnly: true,
             sameSite: "none",
             secure: true,
