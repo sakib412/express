@@ -21,7 +21,6 @@ const Login = async (req, res) => {
             { expiresIn: "7 days" }
           );
           res.cookie("jwt", token, {
-            domain: "localhost",
             httpOnly: true,
             sameSite: "none",
             secure: true,
