@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
+      "http://localhost",
       "https://next-app-sandy-beta.vercel.app",
       "https://next-jst-est-ecuplqqy3-firasel.vercel.app",
     ],
